@@ -3,7 +3,7 @@ package com.hitanshudhawan.spannablestringparser.sample
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.text.method.LinkMovementMethod
-import com.hitanshudhawan.spannablestringparser.spannify
+import com.urbancompany.spanner.spannify
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -37,8 +37,8 @@ class MainActivity : AppCompatActivity() {
         val lorem_ipsum = "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         val s23 = "{ `${lorem_ipsum}` < line-height:120px /> }"
         val s24 = "click { `here` < url:`https://www.google.com` /> } for more information"
-        text_view.text = s24.spannify()
-        text_view.movementMethod = LinkMovementMethod.getInstance()
+        text_view.text = s1.spannify()
+        //text_view.movementMethod = LinkMovementMethod.getInstance()
     }
 
 }
