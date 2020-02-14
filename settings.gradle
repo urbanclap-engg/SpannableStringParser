@@ -1,1 +1,1 @@
-include ':sample', ':spanner', ':parser'
+include ':app', ':spanner', ':parser'
