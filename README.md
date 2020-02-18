@@ -287,7 +287,22 @@ allprojects {
 Add the dependency to your app `build.gradle` file
 ```
 dependencies {
-    implementation 'com.github.hitanshu-dhawan:SpannableStringParser:1.1.0'
+    implementation 'com.github.urbanclap-engg.SpannableStringParser:spanner:2.0.0'
+}
+```
+
+## Parser
+If your project only requires the core parsing of the string and not the inbuilt spans, you can use the parser submodule.
+```
+dependencies {
+    implementation 'com.github.urbanclap-engg.SpannableStringParser:parser:2.0.0'
+}
+```
+If you want both the functionalities in a single project you can add both the dependencies.
+```
+dependencies {
+    implementation 'com.github.urbanclap-engg.SpannableStringParser:parser:2.0.0'
+    implementation 'com.github.urbanclap-engg.SpannableStringParser:spanner:2.0.0'
 }
 ```
 
