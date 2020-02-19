@@ -70,23 +70,6 @@ text_view.text = "{ `text` < property:value ; property:value /> }".spannify()
 text_view.text = "{ `text` < property:value ; property:value|value /> }".spannify()
 ```
 
-- You can even add custom properties using the `spanner` method.
-```kotlin
-spanner { property, value ->
-    when (property) {
-        "..." -> {
-            if (value == "...")
-                return@spanner Custom1Span()
-        }
-        "..." -> {
-            if (value == "...")
-                return@spanner Custom2Span()
-        }
-    }
-    return@spanner null
-}
-```
-
 ## Supported Properties
 
 ### `text-color`
@@ -267,13 +250,6 @@ val lorem_ipsum = "lorem ipsum ..."
 "Click { `here` < url:`https://www.google.com` /> } for more information"
 ```
 ![](images/supported-properties-url-1.png)
-
----
-
-### `more-properties-coming-soon`
-You can add your custom properties using the `spanner` method.
-<br>
-But! If you want any property to be added in SpannableStringParser, feel free to open issues/pull requests.
 
 ## Download
 Add JitPack repository to your root `build.gradle` file
