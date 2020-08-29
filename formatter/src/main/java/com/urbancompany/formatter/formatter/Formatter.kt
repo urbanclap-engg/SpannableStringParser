@@ -31,7 +31,15 @@ class Formatter(private val text: String) {
         if (declarations.isEmpty())
             return text
 
-        return "{ `${text}` <${declarations.joinToString(";") { (property, values) -> "${property}:${values.joinToString("|") { value -> "`${value}`" }}" }}/> }"
+        return "{ `${text}` <${
+            declarations.joinToString(";") { (property, values) ->
+                "${property}:${
+                    values.joinToString("|") { value ->
+                        "`${value}`"
+                    }
+                }"
+            }
+        }/> }"
     }
 
 }
