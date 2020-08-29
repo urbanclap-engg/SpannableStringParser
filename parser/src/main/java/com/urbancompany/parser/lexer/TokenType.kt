@@ -1,6 +1,6 @@
 package com.urbancompany.parser.lexer
 
-internal enum class TokenType(val text: String? = null) {
+enum class TokenType(val text: String? = null) {
     TEXT,
     WHITESPACE,
     LEFT_BRACE("{"),

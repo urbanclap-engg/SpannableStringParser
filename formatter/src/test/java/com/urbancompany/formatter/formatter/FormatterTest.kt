@@ -7,9 +7,19 @@ import org.junit.Test
 class FormatterTest {
 
     @Test
+    fun `test text having no property no value`() {
+        Assert.assertEquals(
+            "SpannableStringParser",
+            SpannableStringFormatter
+                .text("SpannableStringParser")
+                .toString()
+        )
+    }
+
+    @Test
     fun `test text having single property single value`() {
         Assert.assertEquals(
-            "{ `SpannableStringParser` <text-color:#0000FF/> }",
+            "{ `SpannableStringParser` <text-color:`#0000FF`/> }",
             SpannableStringFormatter
                 .text("SpannableStringParser")
                 .property("text-color", "#0000FF")
@@ -20,7 +30,7 @@ class FormatterTest {
     @Test
     fun `test text having single property multiple values`() {
         Assert.assertEquals(
-            "{ `SpannableStringParser` <text-decoration:underline|strike-through/> }",
+            "{ `SpannableStringParser` <text-decoration:`underline`|`strike-through`/> }",
             SpannableStringFormatter
                 .text("SpannableStringParser")
                 .property("text-decoration", "underline", "strike-through")
@@ -31,7 +41,7 @@ class FormatterTest {
     @Test
     fun `test text having multiple properties multiple values`() {
         Assert.assertEquals(
-            "{ `SpannableStringParser` <text-color:#0000FF;text-decoration:underline|strike-through/> }",
+            "{ `SpannableStringParser` <text-color:`#0000FF`;text-decoration:`underline`|`strike-through`/> }",
             SpannableStringFormatter
                 .text("SpannableStringParser")
                 .property("text-color", "#0000FF")

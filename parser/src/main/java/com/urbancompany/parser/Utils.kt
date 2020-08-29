@@ -5,7 +5,7 @@ import com.urbancompany.parser.lexer.Token
 import com.urbancompany.parser.parser.Node
 import com.urbancompany.parser.parser.Parser
 
-internal fun CharSequence.tokenize(): List<Token> {
+fun CharSequence.tokenize(): List<Token> {
     val lexer = Lexer(this)
     val tokens = ArrayList<Token>()
     while (true)
